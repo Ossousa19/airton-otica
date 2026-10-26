@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Airton Ótica</title>
 <meta name="description" content="Airton Ótica, desde 2011 em São Luís. Óculos de sol, armações de grau e lentes em 6 lojas nos shoppings da Ilha, Tropical, São Luís e Golden. Atendimento pelo WhatsApp.">
@@ -22,6 +23,7 @@
   </defs>
 </svg>
 
+<a class="skip" href="#essenciais">Pular para o conteúdo</a>
 <div class="util"><div class="in"><span>Desde 2011 cuidando do olhar de São Luís</span><a class="r" href="https://www.instagram.com/airtonoticaoficial/" target="_blank" rel="noopener">@airtonoticaoficial</a></div></div>
 
 <header class="top" id="topo">
@@ -33,18 +35,17 @@
     </div>
   </div>
   <nav class="menu" aria-label="Principal">
-    <div class="in"><ul class="lbl">
+    <div class="in"><ul>
       <li><a href="#essenciais" data-tab="sol">Óculos de sol</a></li>
       <li><a href="#essenciais" data-tab="grau">Armações de grau</a></li>
       <li><a href="#lentes">Lentes</a></li>
-      <li><a href="#marcas">Marcas</a></li>
       <li><a href="#lojas">Lojas</a></li>
       <li><a href="#historia">Nossa história</a></li>
-      <li><a class="wa-link" href="#fale">Fale no WhatsApp</a></li>
+      <li><a href="#fale">Fale conosco</a></li>
     </ul></div>
   </nav>
   <div class="drawer" id="drawer" hidden>
-    <div class="in"><ul class="lbl">
+    <div class="in"><ul>
       <li><a href="#essenciais" data-tab="sol">Óculos de sol</a></li>
       <li><a href="#essenciais" data-tab="grau">Armações de grau</a></li>
       <li><a href="#lentes">Lentes</a></li>
@@ -65,23 +66,29 @@
     <div class="dots" id="dots"></div>
   </div>
   <div class="hero-copy">
-    <span class="lbl">Coleção 2026</span>
-    <h1 id="t-hero">Veja o mundo<br>do seu jeito</h1>
-    <p class="it">Óculos de sol, armações de grau e lentes em 6 lojas de São Luís.</p>
+    <h1 class="display" id="t-hero">Veja o mundo do seu jeito</h1>
+    <p>Óculos de sol, armações de grau e lentes em 6 lojas de São Luís.</p>
     <div class="hero-cta">
-      <a class="btn btn-ink lbl" href="#fale"><svg aria-hidden="true"><use href="#i-wa"/></svg>Fale com uma loja</a>
-      <a class="btn btn-white lbl" href="#essenciais">Ver coleção</a>
+      <a class="btn btn-ink" href="#fale"><svg aria-hidden="true"><use href="#i-wa"/></svg>Fale com uma loja</a>
+      <a class="btn btn-line" href="#essenciais">Ver coleção</a>
     </div>
   </div>
 </section>
 
-<main>
+<section class="brands" id="marcas" aria-label="Marcas">
+  <div class="marquee">
+    <ul class="mq"><li><img src="assets/img/marca-rayban.png" alt="Ray-Ban" width="78" height="39"></li><li><img src="assets/img/marca-ch.png" alt="Carolina Herrera" width="217" height="14"></li><li><img src="assets/img/marca-swarovski.png" alt="Swarovski" width="149" height="20"></li><li><img src="assets/img/marca-prada.png" alt="Prada" width="138" height="22"></li><li><img src="assets/img/marca-tomford.png" alt="Tom Ford" width="140" height="21"></li><li><img src="assets/img/marca-gucci.png" alt="Gucci" width="138" height="22"></li><li><img src="assets/img/marca-hugoboss.png" alt="Hugo Boss" width="157" height="19"></li><li><img src="assets/img/marca-ck.png" alt="Calvin Klein" width="138" height="22"></li><li><img src="assets/img/marca-ax.png" alt="Armani Exchange" width="207" height="14"></li><li><img src="assets/img/marca-lacoste.png" alt="Lacoste" width="136" height="22"></li><li><img src="assets/img/marca-montblanc.png" alt="Montblanc" width="158" height="19"></li><li><img src="assets/img/marca-nike.png" alt="Nike" width="85" height="35"></li></ul>
+    <ul class="mq" aria-hidden="true" id="mq2"></ul>
+  </div>
+</section>
+
+<main id="conteudo">
 
   <section class="sec" id="essenciais" aria-labelledby="t-ess">
     <div class="in">
       <div class="ess-head">
-        <h2 class="h2 center" id="t-ess">Nossos essenciais</h2>
-        <div class="tabs lbl" role="tablist" aria-label="Filtrar">
+        <h2 class="h2" id="t-ess">Nossos essenciais</h2>
+        <div class="tabs" role="tablist" aria-label="Filtrar">
           <button class="tab" role="tab" type="button" data-f="all" aria-selected="true">Mais procurados</button>
           <button class="tab" role="tab" type="button" data-f="sol" aria-selected="false">Óculos de sol</button>
           <button class="tab" role="tab" type="button" data-f="grau" aria-selected="false">Armações de grau</button>
@@ -91,7 +98,7 @@
     </div>
   </section>
 
-  <section class="sec" id="lentes" aria-label="Destaques" style="padding-top:0">
+  <section id="lentes" aria-label="Destaques">
     <div class="in mosaic">
       <a class="tile tile-big" href="#essenciais" data-tab="all">
         <img src="assets/img/produto-5168.jpg" alt="Haste preta Swarovski com cristais roxo, verde e azul" loading="lazy">
@@ -112,82 +119,45 @@
     </div>
   </section>
 
-  <section class="brands" id="marcas" aria-label="Marcas">
-    <div class="marquee">
-      <ul class="mq"><li><img src="assets/img/marca-rayban.png" alt="Ray-Ban" width="78" height="39"></li><li><img src="assets/img/marca-ch.png" alt="Carolina Herrera" width="217" height="14"></li><li><img src="assets/img/marca-swarovski.png" alt="Swarovski" width="149" height="20"></li><li><img src="assets/img/marca-prada.png" alt="Prada" width="138" height="22"></li><li><img src="assets/img/marca-tomford.png" alt="Tom Ford" width="140" height="21"></li><li><img src="assets/img/marca-gucci.png" alt="Gucci" width="138" height="22"></li><li><img src="assets/img/marca-hugoboss.png" alt="Hugo Boss" width="157" height="19"></li><li><img src="assets/img/marca-ck.png" alt="Calvin Klein" width="138" height="22"></li><li><img src="assets/img/marca-ax.png" alt="Armani Exchange" width="207" height="14"></li><li><img src="assets/img/marca-lacoste.png" alt="Lacoste" width="136" height="22"></li><li><img src="assets/img/marca-montblanc.png" alt="Montblanc" width="158" height="19"></li><li><img src="assets/img/marca-nike.png" alt="Nike" width="85" height="35"></li></ul>
-      <ul class="mq" aria-hidden="true" id="mq2"></ul>
-    </div>
-  </section>
-
-  <section class="finder" id="lojas-busca" aria-labelledby="t-find" style="background-image:linear-gradient(rgba(6,34,46,.82),rgba(6,34,46,.9)),url('assets/img/produto-5186.jpg')">
+  <section class="sec lojas" id="lojas" aria-labelledby="t-lojas">
     <div class="in">
-      <h2 class="caps" id="t-find" style="margin:0;font-size:clamp(20px,4.6vw,30px)">6 lojas em São Luís</h2>
-      <p class="it">Encontre a mais perto de você</p>
-      <form class="find-form" id="find" action="#">
-        <label class="lbl" for="find-mall" style="position:absolute;left:-9999px">Shopping</label>
-        <select id="find-mall" class="lbl"></select>
-        <button class="lbl" type="submit">Ver loja</button>
-      </form>
-    </div>
-  </section>
-
-  <section id="lojas" aria-label="Lojas">
-    <div class="in"><div class="stores" id="stores"></div></div>
-  </section>
-
-  <section class="sec" aria-labelledby="t-prom">
-    <div class="in">
-      <h2 class="h2 center" id="t-prom" style="margin-bottom:28px">Nossas promessas</h2>
-      <div class="prom">
-        <div>
-          <svg viewBox="0 0 64 44" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="16" cy="26" r="11"/><circle cx="48" cy="26" r="11"/><path d="M27 25c3-3 7-3 10 0M5 25 3 13M59 25l2-12"/></g></svg>
-          <h3 class="lbl">Ajuda para escolher</h3>
-          <p class="it">A equipe mostra o formato que valoriza o seu rosto, sem pressa.</p>
-        </div>
-        <div>
-          <svg viewBox="0 0 64 44" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 22s11-16 28-16 28 16 28 16-11 16-28 16S4 22 4 22z"/><circle cx="32" cy="22" r="8"/><circle cx="32" cy="22" r="3"/></g></svg>
-          <h3 class="lbl">Lentes de alta qualidade</h3>
-          <p class="it">Traga a receita e saia com a lente certa para a sua rotina.</p>
-        </div>
-        <div>
-          <svg viewBox="0 0 64 44" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><rect x="14" y="4" width="36" height="36" rx="4"/><path d="M22 14h20M22 22h20M22 30h12"/></g></svg>
-          <h3 class="lbl">15 anos em São Luís</h3>
-          <p class="it">Desde 2011 nos shoppings que você já frequenta.</p>
-        </div>
+      <div class="sec-head">
+        <h2 class="h2" id="t-lojas">6 lojas em São Luís</h2>
+        <p class="sub">Nos shoppings da Ilha, Tropical, São Luís e Golden. Fale direto com a loja pelo WhatsApp.</p>
       </div>
+      <div class="stores" id="stores"></div>
     </div>
   </section>
 
-  <section class="sec hist-sec" id="historia" aria-labelledby="t-hist">
+  <section class="sec" id="historia" aria-labelledby="t-hist">
     <div class="in">
-      <div class="hist-top">
-        <span class="lbl" style="color:var(--blue)">Nossa história</span>
-        <h2 class="hist-h" id="t-hist">15 anos cuidando do olhar de São Luís</h2>
-      </div>
       <div class="hist">
         <figure class="ph"><img src="assets/img/historia.jpg" alt="Dois óculos de sol Ray-Ban, um tartaruga e um redondo dourado, sobre estojo amarelo" loading="lazy"></figure>
         <div class="hist-tx">
+          <h2 class="h2" id="t-hist">15 anos cuidando do olhar de São Luís</h2>
           <p class="lead">Desde 2011, a Airton Ótica reúne em São Luís armações e óculos de sol de marcas reconhecidas, com o atendimento de quem é daqui.</p>
           <p>Com <strong>Airton Oliveira e Franco Sousa</strong> à frente, a Airton Ótica cresceu loja a loja até chegar aos principais shoppings da cidade. Em cada uma delas, a equipe ajuda a escolher a armação certa para o seu rosto e a lente certa para a sua rotina.</p>
-          <a class="link lbl" href="#lojas" style="color:var(--ink);align-self:flex-start">Conheça nossas lojas</a>
+          <a class="link" href="#lojas">Conheça nossas lojas</a>
         </div>
       </div>
       <ol class="miles">
-        <li><b>2011</b><span class="lbl">O começo</span><p>Abertura da primeira loja, em 15 de janeiro.</p></li>
-        <li><b>2021</b><span class="lbl">Zeiss</span><p>Inauguração de um Zeiss Vision Center no São Luís Shopping.</p></li>
-        <li><b>6 lojas</b><span class="lbl">Hoje</span><p>Nos shoppings da Ilha, Tropical, São Luís e Golden.</p></li>
+        <li><b>2011</b><p>Abertura da primeira loja, em 15 de janeiro.</p></li>
+        <li><b>2021</b><p>Inauguração de um Zeiss Vision Center no São Luís Shopping.</p></li>
+        <li><b>Hoje</b><p>6 lojas nos shoppings da Ilha, Tropical, São Luís e Golden.</p></li>
       </ol>
     </div>
   </section>
 
   <section class="sec talk" id="fale" aria-labelledby="t-fale">
     <div class="in talk-in">
-      <h2 class="h2 center" id="t-fale">Fale com a gente</h2>
-      <p class="talk-sub">Escolha o assunto e a loja. A conversa abre direto no WhatsApp.</p>
+      <div class="talk-head">
+        <h2 class="h2" id="t-fale">Fale com a gente</h2>
+        <p class="sub">Escolha o assunto e a loja. A conversa abre direto no WhatsApp.</p>
+      </div>
       <form class="quick" id="builder" action="#">
-        <label class="sel"><span class="lbl">Assunto</span><select id="b-motivo"></select></label>
-        <label class="sel"><span class="lbl">Loja</span><select id="b-loja"></select></label>
-        <a class="btn btn-ink lbl go" id="b-send" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar em contato</a>
+        <label class="sel"><span>Assunto</span><select id="b-motivo"></select></label>
+        <label class="sel"><span>Loja</span><select id="b-loja"></select></label>
+        <a class="btn btn-white go" id="b-send" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar em contato</a>
       </form>
     </div>
   </section>
@@ -198,13 +168,13 @@
   <div class="in">
     <div class="f-top">
       <a class="brand" href="#topo" aria-label="Airton Ótica"><svg viewBox="0 0 310 148" aria-hidden="true" style="height:64px"><use href="#wordmark"/></svg></a>
-      <p class="it">Óculos de sol, armações de grau e lentes em São Luís desde 2011.</p>
+      <p>Óculos de sol, armações de grau e lentes em São Luís desde 2011.</p>
     </div>
     <div class="f-cols">
-      <div><h4 class="lbl">Lojas</h4><ul id="f-lojas"></ul></div>
-      <div><h4 class="lbl">Coleção</h4><ul><li><a href="#essenciais" data-tab="sol">Óculos de sol</a></li><li><a href="#essenciais" data-tab="grau">Armações de grau</a></li><li><a href="#lentes">Lentes</a></li><li><a href="#marcas">Marcas</a></li></ul></div>
-      <div><h4 class="lbl">Atendimento</h4><ul><li><a href="#fale">Fale no WhatsApp</a></li><li><a href="#lojas">Horários</a></li><li><a href="#historia">Nossa história</a></li></ul></div>
-      <div><h4 class="lbl">Siga</h4><ul><li><a href="https://www.instagram.com/airtonoticaoficial/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div><h4>Lojas</h4><ul id="f-lojas"></ul></div>
+      <div><h4>Coleção</h4><ul><li><a href="#essenciais" data-tab="sol">Óculos de sol</a></li><li><a href="#essenciais" data-tab="grau">Armações de grau</a></li><li><a href="#lentes">Lentes</a></li><li><a href="#marcas">Marcas</a></li></ul></div>
+      <div><h4>Atendimento</h4><ul><li><a href="#fale">Fale no WhatsApp</a></li><li><a href="#lojas">Horários</a></li><li><a href="#historia">Nossa história</a></li></ul></div>
+      <div><h4>Siga</h4><ul><li><a href="https://www.instagram.com/airtonoticaoficial/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
     </div>
     <div class="f-base"><span>Airton Ótica, desde 2011</span><span>São Luís, Maranhão</span></div>
   </div>
@@ -216,7 +186,7 @@
   <div class="sheet">
     <div class="sheet-top">
       <img id="pick-img" alt="">
-      <div class="t"><h3 class="lbl" id="pick-t">Escolha a loja</h3><p class="it" id="pick-ctx"></p></div>
+      <div class="t"><h3 id="pick-t">Escolha a loja</h3><p id="pick-ctx"></p></div>
       <button class="x" type="button" id="pick-x" aria-label="Fechar"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
     </div>
     <ul class="pick" id="pick-list"></ul>

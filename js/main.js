@@ -63,9 +63,9 @@
   var prods=$("prods");
   prods.innerHTML=PRODUCTS.map(function(p,i){
     return '<article class="prod" data-type="'+p.type+'" data-top="'+(p.top?1:0)+'">'+
-      '<div class="ph"><img src="'+IMG[p.img]+'" alt="'+esc(p.brand+" "+p.model)+'" loading="lazy"><span class="tag it">'+(p.type==="sol"?"sol":"grau")+'</span></div>'+
-      '<h3 class="lbl">'+esc(p.brand)+'</h3><p class="it">'+esc(p.model+", "+p.info)+'</p>'+
-      '<button class="ask lbl link" type="button" data-i="'+i+'">Quero esse</button></article>';
+      '<div class="ph"><img src="'+IMG[p.img]+'" alt="'+esc(p.brand+" "+p.model)+'" width="800" height="600" loading="lazy"></div>'+
+      '<h3>'+esc(p.brand)+'</h3><p>'+esc(p.model+", "+p.info)+'</p>'+
+      '<button class="ask" type="button" data-i="'+i+'">Quero esse</button></article>';
   }).join("");
   function filter(f){
     document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",String(t.getAttribute("data-f")===f));});
@@ -99,25 +99,19 @@
   $("stores").innerHTML=MALLS.map(function(m){
     var mine=STORES.filter(function(s){return s.mall===m.id;});
     var btns=mine.map(function(s){
-      return '<a class="wa2 lbl" href="'+wa(s,"Olá! Vim pelo Instagram da Airton Ótica e quero falar com a Loja "+s.n+".")+'" target="_blank" rel="noopener" aria-label="WhatsApp da Loja '+s.n+', '+s.label+'">'+WA+'Loja '+s.n+'</a>';
+      return '<a class="wa2" href="'+wa(s,"Olá! Vim pelo Instagram da Airton Ótica e quero falar com a Loja "+s.n+".")+'" target="_blank" rel="noopener" aria-label="WhatsApp da Loja '+s.n+', '+s.label+'">'+WA+'Loja '+s.n+'</a>';
     }).join("");
     var st=statusText(m.h);
     var media=m.img?'<img src="'+IMG_M[m.id]+'" alt="'+esc(m.name)+'" loading="lazy">':'';
     return '<article class="store" id="loja-'+m.id+'">'+
-      '<div class="media">'+media+'<span class="shade"></span><div class="cap"><h3>'+esc(m.name)+'</h3><span class="lbl" style="opacity:.85;font-size:11px">'+esc(m.note)+'</span></div></div>'+
-      '<div class="body"><span class="st-line'+(st.on?" on":"")+'">'+st.t+'</span>'+
+      '<div class="media">'+media+'</div>'+
+      '<div class="body"><div><h3>'+esc(m.name)+'</h3><p class="note">'+esc(m.note)+'</p></div>'+
+      '<span class="st-line'+(st.on?" on":"")+'">'+st.t+'</span>'+
       '<div class="wa-row">'+btns+'</div>'+
-      '<div class="foot"><details class="lbl"><summary>Horários</summary><dl class="hrs" style="text-transform:none;letter-spacing:0;font-weight:400"><dt>Seg a sáb</dt><dd>'+m.week+'</dd><dt>Domingo</dt><dd>'+m.sun+'</dd></dl></details>'+
-      '<a class="lbl" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(m.q)+'" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Mapa</a></div>'+
+      '<div class="foot"><details><summary>Horários</summary><dl class="hrs"><dt>Seg a sáb</dt><dd>'+m.week+'</dd><dt>Domingo</dt><dd>'+m.sun+'</dd></dl></details>'+
+      '<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(m.q)+'" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Ver no mapa</a></div>'+
       '</div></article>';
   }).join("");
-  $("find-mall").innerHTML=MALLS.map(function(m){return '<option value="'+m.id+'">'+esc(m.name)+'</option>';}).join("");
-  $("find").addEventListener("submit",function(e){
-    e.preventDefault();
-    var el=$("loja-"+$("find-mall").value);
-    document.querySelectorAll(".store").forEach(function(s){s.classList.toggle("hl",s===el);});
-    el.scrollIntoView({behavior:"smooth",block:"center"});
-  });
   $("f-lojas").innerHTML=MALLS.map(function(m){return '<li><a href="#loja-'+m.id+'">'+esc(m.name)+'</a></li>';}).join("");
 
   /* montador de mensagem */
