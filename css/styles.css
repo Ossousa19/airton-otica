@@ -14,6 +14,7 @@
   --line:#E2E7EA;
   --amber:#F4AF4C;
   --open:#178352;
+  --r:12px;            /* canto dos cards de foto */
   --wide:"Jost","Futura","Century Gothic","Helvetica Neue",Arial,sans-serif;
   --serif:var(--wide);
   --gl:max(20px, env(safe-area-inset-left,0px));
@@ -95,7 +96,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .prods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
 .prod{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:18px 10px 24px;border-bottom:1px solid var(--line);min-width:0}
 .prod:nth-child(odd){border-right:1px solid var(--line)}
-.prod .ph{position:relative;width:100%;background:var(--sand);overflow:hidden}
+.prod .ph{position:relative;width:100%;background:var(--sand);overflow:hidden;border-radius:var(--r)}
 .prod img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s ease}
 .prod:hover img{transform:scale(1.05)}
 .prod .tag{position:absolute;top:8px;right:8px;background:#fff;color:var(--ink);padding:3px 9px;border-radius:999px;font-size:12px}
@@ -105,19 +106,24 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .prod .ask:hover{color:var(--blue)}
 .prod[hidden]{display:none!important}
 
-/* ---------- mosaico editorial ---------- */
-.mosaic{display:grid;grid-template-columns:1fr;gap:16px}
-.tile{position:relative;overflow:hidden;display:flex;flex-direction:column}
-.tile-big{background:var(--ink);color:#fff;text-align:center;align-items:center;padding:36px 24px 0;gap:12px}
-.tile-big .it{font-size:17px;opacity:.88;margin:0}
-.tile-big img{width:100%;max-width:480px;margin-top:10px;aspect-ratio:1;object-fit:cover}
-.tile-sm{display:grid;grid-template-columns:1fr;background:var(--mist)}
-.tile-sm .tx{padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.tile-sm .tx .it{font-size:16px;color:var(--muted);margin:0;max-width:30ch;line-height:1.3}
-.tile-sm img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.tile-sm.dark{background:var(--deep);color:#fff}
-.tile-sm.dark .it{color:rgba(255,255,255,.75)}
-.tile h3{margin:0;font-size:17px;line-height:1.3}
+/* ---------- mosaico de destaques (referência Optopia: 1 grande + 2 empilhados, foto no card inteiro) ---------- */
+.mosaic{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.tile{position:relative;display:block;overflow:hidden;border-radius:var(--r);background:var(--sand);color:var(--ink);text-decoration:none;border:0;padding:0;text-align:left;font:inherit}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.tile:hover img{transform:scale(1.03)}
+.tile-big{aspect-ratio:4/5;color:#fff}
+.tile-big img{object-position:40% 50%}
+/* véu curto só atrás do texto: a parte de baixo da foto é o estojo azul-claro e o branco sumiria nele */
+.tile-big::after{content:"";position:absolute;inset:auto 0 0;height:65%;background:linear-gradient(to top,rgba(4,54,74,.6),rgba(4,54,74,0))}
+.tile-big .tx{position:absolute;left:24px;right:24px;bottom:24px;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.tile-big h3{margin:0;font-weight:400;font-size:clamp(44px,12vw,76px);line-height:.95;letter-spacing:-.02em}
+.tile-big p{margin:0 0 6px;font-weight:300;font-size:15px;line-height:1.4;max-width:30ch}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;background:#fff;color:var(--ink);font-weight:500;font-size:14px;transition:background .2s ease}
+.tile-big:hover .pill{background:var(--mist)}
+.tile-sm{aspect-ratio:16/10;cursor:pointer}
+.tile-sm .box{position:absolute;top:20px;right:20px;z-index:1;padding:8px 14px;border:1px solid var(--ink);background:rgba(255,255,255,.55);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .2s ease,color .2s ease}
+.tile-low .box{top:auto;bottom:20px;right:auto;left:50%;transform:translateX(-50%);white-space:nowrap}
+.tile-sm:hover .box{background:var(--ink);color:#fff}
 
 /* ---------- marcas ---------- */
 .brands{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -268,10 +274,10 @@ dialog::backdrop{background:rgba(6,34,46,.6)}
   .prods{grid-template-columns:repeat(4,minmax(0,1fr))}
   .prod{border-right:1px solid var(--line)}
   .prod:nth-child(4n){border-right:0}
-  .mosaic{grid-template-columns:1fr 1fr}
-  .tile-big{grid-row:span 2}
-  .tile-sm{grid-template-columns:1fr 1fr;align-items:stretch}
-  .tile-sm img{height:100%;aspect-ratio:auto}
+  .mosaic{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);grid-template-rows:repeat(2,clamp(220px,26vw,300px));gap:16px}
+  .tile-big{grid-row:span 2;aspect-ratio:auto}
+  .tile-big .tx{left:40px;bottom:40px}
+  .tile-sm{aspect-ratio:auto}
   .stores{grid-template-columns:repeat(2,minmax(0,1fr))}
   .prom{grid-template-columns:repeat(3,minmax(0,1fr))}
   .prom > div{border-bottom:0;border-right:1px solid var(--line)}
