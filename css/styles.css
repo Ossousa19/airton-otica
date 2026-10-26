@@ -28,7 +28,7 @@ img{display:block;max-width:100%}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 a,button,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.skip{position:absolute;left:16px;top:-60px;z-index:70;padding:10px 18px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500}
+.skip{position:absolute;left:16px;top:-60px;z-index:70}
 .skip:focus{top:12px}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .in{max-width:1240px;margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
@@ -38,17 +38,13 @@ a,button,select,summary{touch-action:manipulation;-webkit-tap-highlight-color:tr
 .display{margin:0;font-weight:300;font-size:clamp(36px,7vw,64px);line-height:1.02;letter-spacing:-.025em;color:var(--ink);text-wrap:balance}
 .h2{margin:0;font-weight:300;font-size:clamp(30px,4.6vw,44px);line-height:1.08;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
 .sub{margin:0;color:var(--muted);font-size:16px;line-height:1.5;max-width:46ch}
-.link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:15px;color:var(--ink);border-bottom:1px solid currentColor;padding-bottom:2px;transition:color .2s ease}
-.link:hover{color:var(--blue)}
-button.link{border:0;border-bottom:1px solid currentColor;background:none;padding:0 0 2px}
 .sec{padding-block:72px}
 .sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
 
-/* botões: um só componente. Altura 52px (40px no .btn-sm), pílula, 15px/500.
+/* botões: um só componente, sem exceção. 44px de altura, pílula, 14px/400, contorno de 1px.
    Cores: ink = ação principal, line = secundária, white = sobre foto ou fundo escuro, soft = filtro. */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:0;border-radius:999px;text-decoration:none;white-space:nowrap;font-weight:500;font-size:15px;line-height:1;cursor:pointer;transition:background .2s ease,color .2s ease,box-shadow .2s ease}
-.btn svg{width:18px;height:18px;flex:none}
-.btn-sm{min-height:40px;padding:0 18px;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:0;border-radius:999px;text-decoration:none;white-space:nowrap;font-weight:400;font-size:14px;letter-spacing:.01em;line-height:1;cursor:pointer;transition:background .2s ease,color .2s ease,box-shadow .2s ease}
+.btn svg{width:16px;height:16px;flex:none}
 .btn-ink{background:var(--ink);color:#fff}
 .btn-ink:hover{background:var(--blue)}
 .btn-white{background:#fff;color:var(--ink)}
@@ -112,11 +108,11 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .prods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}
 .prod{display:flex;flex-direction:column;gap:4px;min-width:0}
 .prod .ph{position:relative;margin:0 0 10px;background:var(--sand);border-radius:var(--r);overflow:hidden}
-.prod img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .7s ease}
+.prod img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .7s ease}
 .prod:hover img{transform:scale(1.04)}
 .prod h3{margin:0;font-size:15px;font-weight:500;line-height:1.3;color:var(--ink)}
 .prod p{margin:0;font-size:14px;color:var(--muted);line-height:1.35}
-.prod .link{align-self:flex-start;margin-top:8px}
+.prod .btn{align-self:flex-start;margin-top:10px}
 .prod[hidden]{display:none!important}
 
 /* ---------- mosaico de destaques (referência Optopia: 1 grande + 2 empilhados, foto no card inteiro) ---------- */
@@ -132,9 +128,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .tile-big h3{margin:0;font-weight:300;font-size:clamp(44px,12vw,76px);line-height:.95;letter-spacing:-.025em}
 .tile-big p{margin:0 0 6px;font-weight:300;font-size:16px;line-height:1.4;max-width:30ch}
 .tile-sm{aspect-ratio:16/10;cursor:pointer}
-.tile-sm .box{position:absolute;top:20px;right:20px;z-index:1;padding:8px 14px;border:1px solid var(--ink);background:rgba(255,255,255,.55);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .2s ease,color .2s ease}
-.tile-low .box{top:auto;bottom:20px;right:auto;left:50%;transform:translateX(-50%);white-space:nowrap}
-.tile-sm:hover .box{background:var(--ink);color:#fff}
+.tile-sm .btn{position:absolute;top:20px;right:20px;z-index:1}
+.tile-low .btn{top:auto;bottom:20px;right:auto;left:50%;transform:translateX(-50%)}
 
 /* ---------- lojas ---------- */
 .lojas{background:var(--veil);margin-top:72px}
@@ -153,15 +148,11 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .st-line.on::before{background:var(--open);box-shadow:0 0 0 4px rgba(23,131,82,.14)}
 .wa-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
 .wa-row .btn{padding:0 14px}
-.foot{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px}
-.foot a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);font-weight:500}
-.foot a:hover{color:var(--blue)}
-.foot a svg{width:15px;height:15px}
-.foot summary{cursor:pointer;list-style:none;color:var(--ink);font-weight:500}
-.foot a,.foot summary{font-size:15px;border-bottom:1px solid currentColor;padding-bottom:2px}
+.foot{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.foot details{flex:1 1 auto}
+.foot summary{list-style:none}
 .foot summary::-webkit-details-marker{display:none}
-.foot summary::after{content:" +"}
-.foot details[open] summary::after{content:" −"}
+.foot details[open] summary{background:var(--ink);color:#fff}
 .hrs{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:10px 0 0;font-size:14px;font-variant-numeric:tabular-nums}
 .hrs dt{color:var(--muted)}
 .hrs dd{margin:0}
@@ -174,7 +165,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .hist-tx .lead{margin:0;font-size:clamp(19px,2vw,22px);line-height:1.45;color:var(--fg);font-weight:300;max-width:40ch}
 .hist-tx p{margin:0;color:var(--muted);max-width:50ch}
 .hist-tx p strong{color:var(--fg);font-weight:500}
-.hist-tx .link{align-self:flex-start}
+.hist-tx .btn{align-self:flex-start}
 /* linha do tempo: os três marcos são uma sequência real */
 .miles{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:28px;position:relative}
 .miles li{position:relative;display:flex;flex-direction:column;gap:6px;padding-left:28px}
@@ -190,12 +181,11 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .talk .sub{color:rgba(255,255,255,.72)}
 .talk-head{display:flex;flex-direction:column;gap:12px}
 .talk-in{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:end}
-.quick{width:100%;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
-.sel{position:relative;display:block;background:var(--white);border-radius:var(--r);min-height:52px;min-width:0;color:var(--fg)}
-.sel span{position:absolute;left:18px;top:6px;font-size:12px;font-weight:500;color:var(--muted);pointer-events:none}
-.sel select{appearance:none;-webkit-appearance:none;position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:var(--r);background-color:var(--white);padding:22px 40px 4px 18px;font-size:15px;color:var(--fg);cursor:pointer;outline:none}
-.sel::after{content:"";position:absolute;right:18px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
-.sel:focus-within{box-shadow:0 0 0 2px var(--blue)}
+.quick{width:100%;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:end}
+/* campo com a mesma altura e o mesmo formato do botão; rótulo em cima */
+.sel{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sel span{font-size:13px;color:rgba(255,255,255,.72)}
+.sel select{appearance:none;-webkit-appearance:none;width:100%;min-height:44px;border:0;border-radius:999px;padding:0 40px 0 20px;font-size:14px;color:var(--fg);cursor:pointer;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%2304364A' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 18px center}
 
 /* ---------- rodapé ---------- */
 footer{background:var(--deep);color:rgba(255,255,255,.7);font-size:15px}
@@ -211,8 +201,8 @@ footer .in{padding-block:56px 32px;display:flex;flex-direction:column;gap:36px}
 .f-base{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 /* botão flutuante e janela de loja */
-.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px rgba(4,54,74,.3)}
-.fab svg{width:26px;height:26px}
+.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:52px;height:52px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px rgba(4,54,74,.3)}
+.fab svg{width:22px;height:22px}
 dialog{border:0;padding:0;width:min(520px,100%);max-height:90vh;margin:auto auto 0;border-radius:var(--r) var(--r) 0 0;overscroll-behavior:contain;background:var(--white);color:var(--fg)}
 dialog::backdrop{background:rgba(6,34,46,.55)}
 .sheet{padding:22px var(--gr) calc(22px + env(safe-area-inset-bottom,0px)) var(--gl);display:flex;flex-direction:column;gap:16px}
@@ -221,7 +211,7 @@ dialog::backdrop{background:rgba(6,34,46,.55)}
 .sheet-top .t{flex:1;min-width:0}
 .sheet-top h3{margin:0;font-size:18px;font-weight:500;color:var(--ink)}
 .sheet-top p{margin:2px 0 0;font-size:14px;color:var(--muted);line-height:1.3}
-.x{width:40px;height:40px;border:0;border-radius:50%;background:var(--veil);display:grid;place-items:center;flex:none}
+.x{width:44px;height:44px;border:0;border-radius:50%;background:var(--veil);display:grid;place-items:center;flex:none}
 .x svg{width:16px;height:16px}
 .pick{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .pick a{display:flex;align-items:center;gap:14px;padding:13px 4px;border-bottom:1px solid var(--line);text-decoration:none}

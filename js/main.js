@@ -65,7 +65,7 @@
     return '<article class="prod" data-type="'+p.type+'" data-top="'+(p.top?1:0)+'">'+
       '<div class="ph"><img src="'+IMG[p.img]+'" alt="'+esc(p.brand+" "+p.model)+'" width="800" height="600" loading="lazy"></div>'+
       '<h3>'+esc(p.brand)+'</h3><p>'+esc(p.model+", "+p.info)+'</p>'+
-      '<button class="ask link" type="button" data-i="'+i+'">Quero esse</button></article>';
+      '<button class="ask btn btn-line" type="button" data-i="'+i+'">Quero esse</button></article>';
   }).join("");
   function filter(f){
     document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",String(t.getAttribute("data-f")===f));});
@@ -108,8 +108,8 @@
       '<div class="body"><div><h3>'+esc(m.name)+'</h3><p class="note">'+esc(m.note)+'</p></div>'+
       '<span class="st-line'+(st.on?" on":"")+'">'+st.t+'</span>'+
       '<div class="wa-row">'+btns+'</div>'+
-      '<div class="foot"><details><summary>Horários</summary><dl class="hrs"><dt>Seg a sáb</dt><dd>'+m.week+'</dd><dt>Domingo</dt><dd>'+m.sun+'</dd></dl></details>'+
-      '<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(m.q)+'" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Ver no mapa</a></div>'+
+      '<div class="foot"><details><summary class="btn btn-line">Horários</summary><dl class="hrs"><dt>Seg a sáb</dt><dd>'+m.week+'</dd><dt>Domingo</dt><dd>'+m.sun+'</dd></dl></details>'+
+      '<a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(m.q)+'" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Ver no mapa</a></div>'+
       '</div></article>';
   }).join("");
   $("f-lojas").innerHTML=MALLS.map(function(m){return '<li><a href="#loja-'+m.id+'">'+esc(m.name)+'</a></li>';}).join("");
