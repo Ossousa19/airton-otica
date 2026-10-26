@@ -65,7 +65,7 @@
     return '<article class="prod" data-type="'+p.type+'" data-top="'+(p.top?1:0)+'">'+
       '<div class="ph"><img src="'+IMG[p.img]+'" alt="'+esc(p.brand+" "+p.model)+'" width="800" height="600" loading="lazy"></div>'+
       '<h3>'+esc(p.brand)+'</h3><p>'+esc(p.model+", "+p.info)+'</p>'+
-      '<button class="ask" type="button" data-i="'+i+'">Quero esse</button></article>';
+      '<button class="ask link" type="button" data-i="'+i+'">Quero esse</button></article>';
   }).join("");
   function filter(f){
     document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",String(t.getAttribute("data-f")===f));});
@@ -99,7 +99,7 @@
   $("stores").innerHTML=MALLS.map(function(m){
     var mine=STORES.filter(function(s){return s.mall===m.id;});
     var btns=mine.map(function(s){
-      return '<a class="wa2" href="'+wa(s,"Olá! Vim pelo Instagram da Airton Ótica e quero falar com a Loja "+s.n+".")+'" target="_blank" rel="noopener" aria-label="WhatsApp da Loja '+s.n+', '+s.label+'">'+WA+'Loja '+s.n+'</a>';
+      return '<a class="btn btn-ink" href="'+wa(s,"Olá! Vim pelo Instagram da Airton Ótica e quero falar com a Loja "+s.n+".")+'" target="_blank" rel="noopener" aria-label="WhatsApp da Loja '+s.n+', '+s.label+'">'+WA+'Loja '+s.n+'</a>';
     }).join("");
     var st=statusText(m.h);
     var media=m.img?'<img src="'+IMG_M[m.id]+'" alt="'+esc(m.name)+'" loading="lazy">':'';
