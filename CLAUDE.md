@@ -2,7 +2,9 @@
 
 Landing page da Airton Ótica (São Luís, MA), usada no link da bio do Instagram. Não é loja virtual: todo contato acontece pelo WhatsApp de cada loja.
 
-Publicado em https://ossousa19.github.io/airton-otica/ pelo GitHub Pages. Todo push na branch `main` publica sozinho em 1 a 2 minutos.
+Endereço oficial: https://airtonotica.netlify.app (Netlify, projeto `airtonotica`). O `netlify.toml` publica só `index.html`, `css/`, `js/` e `assets/`. Com o repositório ligado no painel do Netlify, todo push na `main` publica sozinho; sem isso, publicar com `npx netlify-cli deploy --prod` a partir de uma pasta só com esses arquivos.
+
+O endereço antigo, https://ossousa19.github.io/airton-otica/ (GitHub Pages), continua no ar e também publica a cada push na `main`.
 
 ## Estrutura
 

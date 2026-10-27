@@ -1,0 +1,4 @@
+# Publica só os arquivos do site; CLAUDE.md e docs/ ficam fora do ar.
+[build]
+  command = "mkdir -p _site && cp -r index.html css js assets _site/"
+  publish = "_site"
